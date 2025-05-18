@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Launcher : MonoBehaviour
 {
@@ -16,8 +17,10 @@ public class Launcher : MonoBehaviour
         
     }
 
-    public void Launch(Vector2 force)
+    private void OnMouseDrag()
     {
-        rigidbody.AddForce(force, ForceMode2D.Impulse);
+        Vector3 point = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        point.z = 0;
+        rigidbody.MovePosition(point);
     }
 }

@@ -7,9 +7,9 @@
             "actions": [
                 {
                     "name": "Launch(mouse)",
-                    "type": "Value",
+                    "type": "Button",
                     "id": "9707c417-acce-45f4-8a8c-e99781f079c3",
-                    "expectedControlType": "Axis",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
