@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 
 public class ExitGameScript : MonoBehaviour
@@ -5,7 +6,7 @@ public class ExitGameScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        DontDestroyOnLoad(gameObject);
     }
 
     // Update is called once per frame
@@ -16,6 +17,11 @@ public class ExitGameScript : MonoBehaviour
 
     public void ExitGame()
     {
+        Debug.Log("Exit Game");
+#if UNITY_EDITOR
+        EditorApplication.ExitPlaymode();
+#else
         Application.Quit();
+#endif
     }
 }
